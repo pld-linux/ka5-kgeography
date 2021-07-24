@@ -38,6 +38,10 @@ KGeography is a geography learning tool, which allows you to learn
 about the political divisions of some countries (divisions, capitals
 of those divisions and their associated flags if there are some).
 
+%description -l pl.UTF-8
+KGeography to narzędzi do nauki geografii, które pozwala uczyć się
+o podziałach administracyjnych różnych krajów, ich stolicach i flagach.
+
 %prep
 %setup -q -n %{kaname}-%{version}
 
