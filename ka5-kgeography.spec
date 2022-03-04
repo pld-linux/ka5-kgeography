@@ -1,15 +1,15 @@
-%define		kdeappsver	21.12.2
+%define		kdeappsver	21.12.3
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		kgeography
 Summary:	kgeography
 Name:		ka5-%{kaname}
-Version:	21.12.2
+Version:	21.12.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	04b180fb5808b7b6e7160b09ebfeb37a
+# Source0-md5:	ebeccfdd28c2badbd98ac5d3daca469a
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= 5.11.1
