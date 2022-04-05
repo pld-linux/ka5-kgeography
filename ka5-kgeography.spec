@@ -1,3 +1,6 @@
+#
+# Conditional build:
+%bcond_with	tests		# build with tests
 %define		kdeappsver	21.12.3
 %define		kframever	5.56.0
 %define		qtver		5.9.0
@@ -63,10 +66,16 @@ install -d build
 cd build
 %cmake \
 	-G Ninja \
+	%{!?with_tests:-DBUILD_TESTING=OFF} \
 	-DHTML_INSTALL_DIR=%{_kdedocdir} \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
 	..
 %ninja_build
+
+%if %{with tests}
+ctest
+%endif
+
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -77,7 +86,7 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files 
+%files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kgeography
 
